@@ -276,7 +276,7 @@ class LargeScaleImageGenerator:
                 # The autocast was causing the "invalid value encountered in cast" error
                     # Log inference start for first batch
                     if batch_num == 1:
-                        logger.info("🔥 Starting first inference - this is typically the slow part...")
+                        logger.info("Starting first inference - this is typically the slow part...")
                     
                     results = self.pipe(
                         prompt=batch_prompts,
@@ -291,7 +291,7 @@ class LargeScaleImageGenerator:
                     
                     # Log completion for first batch
                     if batch_num == 1:
-                        logger.info("✅ First inference complete - subsequent batches will be faster!")
+                        logger.info("First inference complete - subsequent batches will be faster!")
             
             return results.images, batch_prompts
             
@@ -660,10 +660,10 @@ def main():
     try:
         final_stats = generator.generate_10k_images()
         
-        print(f"\n🎉 SUCCESS! Generated {final_stats['total_generated']} images")
-        print(f"📁 Output directory: {config['output_dir']}")
-        print(f"⏱️ Total time: {final_stats['total_time_hours']:.1f} hours")
-        print(f"🚀 Speed: {final_stats['images_per_hour']:.1f} images/hour")
+        print(f"\n SUCCESS! Generated {final_stats['total_generated']} images")
+        print(f" Output directory: {config['output_dir']}")
+        print(f" Total time: {final_stats['total_time_hours']:.1f} hours")
+        print(f" Speed: {final_stats['images_per_hour']:.1f} images/hour")
         
     except KeyboardInterrupt:
         logger.info("Generation interrupted by user")
