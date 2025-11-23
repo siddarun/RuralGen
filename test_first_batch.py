@@ -289,10 +289,10 @@ def main():
     success = generate_test_images(pipe, device, args)
     
     if success:
-        logger.info("✅ Test completed successfully!")
+        logger.info(" Test completed successfully!")
         return 0
     else:
-        logger.error("❌ Test failed!")
+        logger.error(" Test failed!")
         return 1
 
 if __name__ == "__main__":
