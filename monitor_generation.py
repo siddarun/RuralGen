@@ -152,30 +152,30 @@ class GenerationMonitor:
     def print_status(self, stats):
         """Print current status to console"""
         if not stats:
-            print("⏳ Waiting for generation to start...")
+            print(" Waiting for generation to start...")
             return
         
         print("\n" + "="*60)
-        print(f"🚀 100K IMAGE GENERATION - LIVE STATUS")
+        print(f" 100K IMAGE GENERATION - LIVE STATUS")
         print("="*60)
         
-        print(f"📊 PROGRESS:")
+        print(f" PROGRESS:")
         print(f"   Generated: {stats['generated_count']:,} images")
         print(f"   Failed: {stats['failed_count']:,} images")
         print(f"   Target: {stats['target_images']:,} images")
         print(f"   Progress: {stats['progress_percent']:.1f}%")
         print(f"   Success Rate: {stats['success_rate']*100:.1f}%")
         
-        print(f"\n⏱️ TIMING:")
+        print(f"\n TIMING:")
         print(f"   Elapsed: {stats['elapsed_hours']:.1f} hours")
         print(f"   Generation Rate: {stats['generation_rate']:.1f} images/hour")
         if stats['eta_time']:
             print(f"   ETA: {stats['eta_time'].strftime('%Y-%m-%d %H:%M')} ({stats['eta_hours']:.1f}h remaining)")
         
-        print(f"\n🎯 QUALITY:")
+        print(f"\ QUALITY:")
         print(f"   Average Quality Score: {stats['avg_quality']:.3f}")
         
-        print(f"\n💾 RESOURCES:")
+        print(f"\n RESOURCES:")
         memory_info = stats['current_memory']
         if memory_info:
             print(f"   GPU Memory: {memory_info.get('gpu_memory_used', 0):.1f}GB")
@@ -185,11 +185,11 @@ class GenerationMonitor:
         progress_width = 50
         filled_width = int(progress_width * stats['progress_percent'] / 100)
         bar = "█" * filled_width + "░" * (progress_width - filled_width)
-        print(f"\n📈 [{bar}] {stats['progress_percent']:.1f}%")
+        print(f"\n [{bar}] {stats['progress_percent']:.1f}%")
     
     def run_console_monitor(self, refresh_interval=30):
         """Run console-only monitoring"""
-        print("🖥️ Console monitoring started (Ctrl+C to exit)")
+        print(" Console monitoring started (Ctrl+C to exit)")
         
         try:
             while True:
@@ -209,11 +209,11 @@ class GenerationMonitor:
                 time.sleep(refresh_interval)
                 
         except KeyboardInterrupt:
-            print("\n👋 Monitoring stopped by user")
+            print("\n Monitoring stopped by user")
     
     def run_gui_monitor(self, refresh_interval=10):
         """Run GUI monitoring with plots"""
-        print("📊 GUI monitoring started (close window to exit)")
+        print(" GUI monitoring started (close window to exit)")
         
         def update_dashboard(frame):
             progress_data = self.load_progress()
@@ -225,7 +225,7 @@ class GenerationMonitor:
                 
                 # Check if complete
                 if stats['generated_count'] >= stats['target_images']:
-                    print("\n🎉 GENERATION COMPLETE!")
+                    print("\n GENERATION COMPLETE!")
                     plt.close('all')
                     return
         
@@ -237,7 +237,7 @@ class GenerationMonitor:
         try:
             plt.show(block=True)
         except KeyboardInterrupt:
-            print("\n👋 Monitoring stopped by user")
+            print("\n Monitoring stopped by user")
         finally:
             plt.close('all')
 
@@ -255,8 +255,8 @@ def main():
     args = parser.parse_args()
     
     if not os.path.exists(args.output_dir):
-        print(f"❌ Output directory not found: {args.output_dir}")
-        print("💡 Make sure generation has started and directory exists")
+        print(f" Output directory not found: {args.output_dir}")
+        print(" Make sure generation has started and directory exists")
         return 1
     
     monitor = GenerationMonitor(args.output_dir)
@@ -267,9 +267,9 @@ def main():
         try:
             monitor.run_gui_monitor(args.refresh)
         except ImportError:
-            print("❌ GUI mode requires matplotlib")
-            print("💡 Install with: pip install matplotlib")
-            print("🔄 Falling back to console mode...")
+            print(" GUI mode requires matplotlib")
+            print(" Install with: pip install matplotlib")
+            print(" Falling back to console mode...")
             monitor.run_console_monitor(args.refresh)
     
     return 0
