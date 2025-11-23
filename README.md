@@ -167,7 +167,7 @@ python monitor_generation.py
 - **Detailed metrics** including collision rates, lane keeping, steering smoothness
 - **Scenario-specific results** for different weather and road conditions
 
-## 📊 Performance Benchmarks
+## Performance Benchmarks
 
 ### Data Generation Performance
 | Configuration | Time per Image | Images/Second | Quality Score | Use Case |
