@@ -1,12 +1,12 @@
-# 🚗 SDXL Rural Driving Dataset Generator & CARLA Testing Framework
+# SDXL Rural Driving Dataset Generator & CARLA Testing Framework
 
 A comprehensive system for generating high-quality synthetic rural driving images using Stable Diffusion XL (SDXL) and testing their effectiveness in autonomous driving scenarios using CARLA simulator. This project creates photorealistic rural road scenes and validates their impact on AI model performance through rigorous simulation testing.
 
-## 🎯 Overview
+## Overview
 
 This project provides a complete pipeline from synthetic data generation to autonomous driving validation. It consists of two main components:
 
-### 🎨 **Data Generation Pipeline**
+### **Data Generation Pipeline**
 Generates synthetic rural driving datasets for autonomous vehicle research, computer vision applications, and machine learning training. The generated images feature:
 
 - **Photorealistic rural road scenes** with proper geometric perspective
@@ -15,7 +15,7 @@ Generates synthetic rural driving datasets for autonomous vehicle research, comp
 - **High-resolution outputs** (1024x1024) optimized for ML training
 - **Comprehensive quality analysis** comparing against real datasets (KITTI, Cityscapes, BDD100K)
 
-### 🚗 **CARLA Testing Framework**
+### **CARLA Testing Framework**
 Validates the effectiveness of synthetic data through rigorous autonomous driving simulation:
 
 - **Performance comparison** between models trained with/without synthetic data
@@ -24,33 +24,33 @@ Validates the effectiveness of synthetic data through rigorous autonomous drivin
 - **Automated testing pipeline** with statistical analysis and visualization
 - **Real-world applicability assessment** through simulation benchmarks
 
-## 🚀 Features
+## Features
 
-### 🎨 Data Generation Capabilities
-- ✅ **High-Quality Generation**: SDXL-based pipeline with advanced prompt engineering
-- ✅ **Speed Optimized**: 5-10x faster generation with minimal quality loss
-- ✅ **Quality Analysis**: Comprehensive comparison with real driving datasets
-- ✅ **Batch Processing**: Generate 10,000+ images efficiently with memory management
-- ✅ **Post-Processing**: Automatic enhancement for maximum realism
-- ✅ **Error Handling**: Robust dependency management and troubleshooting
+### Data Generation Capabilities
+- **High-Quality Generation**: SDXL-based pipeline with advanced prompt engineering
+- **Speed Optimized**: 5-10x faster generation with minimal quality loss
+- **Quality Analysis**: Comprehensive comparison with real driving datasets
+- **Batch Processing**: Generate 10,000+ images efficiently with memory management
+- **Post-Processing**: Automatic enhancement for maximum realism
+- **Error Handling**: Robust dependency management and troubleshooting
 
-### 🚗 CARLA Testing Capabilities
-- ✅ **Automated Testing**: Complete autonomous driving simulation framework
-- ✅ **Performance Comparison**: Side-by-side testing with/without synthetic data
-- ✅ **Multiple Scenarios**: Rural roads, highways, various weather conditions
-- ✅ **Comprehensive Metrics**: Collisions, lane keeping, steering smoothness, path efficiency
-- ✅ **Statistical Analysis**: Automated result analysis with visualization
-- ✅ **Model Integration**: Easy integration with your trained AI models
+### CARLA Testing Capabilities
+- **Automated Testing**: Complete autonomous driving simulation framework
+- **Performance Comparison**: Side-by-side testing with/without synthetic data
+- **Multiple Scenarios**: Rural roads, highways, various weather conditions
+- **Comprehensive Metrics**: Collisions, lane keeping, steering smoothness, path efficiency
+- **Statistical Analysis**: Automated result analysis with visualization
+- **Model Integration**: Easy integration with your trained AI models
 
 ### Advanced Features
-- 🎨 **Ultra-Realistic Prompts**: Professional photography specifications for rural scenes
-- ⚡ **Production Scale**: Generate 10K+ images with quality filtering and batch processing
-- 🔍 **Quality Metrics**: FID scores, Inception scores, similarity analysis
-- 📊 **Comprehensive Visualization**: Multi-chart analysis and comparison dashboards
-- 🛠️ **Dependency Auto-Fix**: Automatic resolution of common import errors
-- 🎯 **Real-World Validation**: CARLA simulation testing with quantitative performance metrics
+- **Ultra-Realistic Prompts**: Professional photography specifications for rural scenes
+- **Production Scale**: Generate 10K+ images with quality filtering and batch processing
+- **Quality Metrics**: FID scores, Inception scores, similarity analysis
+- **Comprehensive Visualization**: Multi-chart analysis and comparison dashboards
+- **Dependency Auto-Fix**: Automatic resolution of common import errors
+- **Real-World Validation**: CARLA simulation testing with quantitative performance metrics
 
-## 📋 Requirements
+## Requirements
 
 ### Hardware Requirements
 - **GPU**: NVIDIA GPU with 16GB+ VRAM (tested on A5000 24GB)
@@ -91,7 +91,7 @@ matplotlib>=3.5.0
 pillow>=8.0.0
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone and Setup
 ```bash
@@ -201,7 +201,7 @@ python monitor_generation.py
 | 10K Images | 7 hours | 8,500 images | 85% | 21 GB |
 | 50K Images | 35 hours | 42,500 images | 85% | 105 GB |
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -251,7 +251,7 @@ torch.cuda.set_per_process_memory_fraction(0.9)
 
 ```
 sdxl-rural-driving-generator/
-├── 📓 Data Generation
+├── Data Generation
 │   ├── sdxl_rural_driving_gen.ipynb      # Main generation notebook
 │   ├── generate_10k_images.py            # Production-scale generation script
 │   ├── monitor_generation.py             # Real-time generation monitoring
@@ -259,7 +259,7 @@ sdxl-rural-driving-generator/
 │   ├── config_10k.json                   # Production generation configuration
 │   └── requirements_10k.txt              # Production dependencies
 │
-├── 🚗 CARLA Testing Framework
+├── CARLA Testing Framework
 │   ├── carla_synthetic_data_test.py      # Main CARLA testing script
 │   ├── setup_carla_test.py               # CARLA environment setup
 │   ├── train_with_synthetic_data.py      # Model training example
@@ -267,39 +267,39 @@ sdxl-rural-driving-generator/
 │   ├── run_carla_test.sh                 # Convenience run script
 │   └── README_CARLA_Testing.md           # CARLA testing documentation
 │
-├── 🔧 Utilities & Support
+├── Utilities & Support
 │   ├── fix_diffusers_dependencies.py     # Dependency auto-fixer
 │   ├── carla_integration.ipynb           # CARLA simulator integration
 │   └── carla_integration_guide.py        # CARLA integration utilities
 │
-├── 📁 Generated Data & Results
+├── Generated Data & Results
 │   ├── generated_images/                 # Your 10K+ synthetic images
 │   ├── models/                           # Downloaded model files
 │   ├── carla_test_results/              # CARLA testing results
 │   ├── quality_results/                  # Analysis and benchmark results
 │   └── synthetic_data/                   # Organized datasets
 │
-└── 📖 Documentation
+└── Documentation
     ├── README.md                         # This comprehensive guide
     └── README_CARLA_Testing.md          # Detailed CARLA testing guide
 ```
 
-## 📓 Component Files Description
+## Component Files Description
 
-### 🎨 **Data Generation Components**
+### **Data Generation Components**
 
-#### **📓 sdxl_rural_driving_gen.ipynb** - Interactive Generation Notebook
+#### **sdxl_rural_driving_gen.ipynb** - Interactive Generation Notebook
 **Purpose**: Interactive Jupyter notebook for prototyping, experimentation, and small-scale generation
 
 **What it does**:
-- 🔧 **Automatic Dependency Setup**: Installs and configures all required packages with conflict resolution
-- 🎨 **SDXL Pipeline Configuration**: Sets up Stable Diffusion XL with optimized parameters for rural scenes
-- 🖼️ **High-Quality Image Generation**: Creates 15-50 photorealistic rural driving images (1024x1024)
-- 📊 **Real Data Comparison**: Compares generated images against KITTI, Cityscapes, BDD100K datasets
-- 🎮 **CARLA Simulation Comparison**: Benchmarks against CARLA simulator quality metrics
-- 📈 **Advanced Evaluation**: Calculates FID, Dice, SSIM scores for quantitative quality assessment
-- 💾 **Dataset Export**: Saves images and metadata in organized directory structure
-- 🔬 **Interactive Analysis**: Step-by-step exploration with visualizations and explanations
+- **Automatic Dependency Setup**: Installs and configures all required packages with conflict resolution
+- **SDXL Pipeline Configuration**: Sets up Stable Diffusion XL with optimized parameters for rural scenes
+- **High-Quality Image Generation**: Creates 15-50 photorealistic rural driving images (1024x1024)
+- **Real Data Comparison**: Compares generated images against KITTI, Cityscapes, BDD100K datasets
+- **CARLA Simulation Comparison**: Benchmarks against CARLA simulator quality metrics
+- **Advanced Evaluation**: Calculates FID, Dice, SSIM scores for quantitative quality assessment
+- **Dataset Export**: Saves images and metadata in organized directory structure
+- **Interactive Analysis**: Step-by-step exploration with visualizations and explanations
 
 **Key Features**:
 - Cell-by-cell execution for experimentation
@@ -312,18 +312,18 @@ sdxl-rural-driving-generator/
 **Output**: 15-50 high-quality rural driving images + comprehensive quality reports
 **Best For**: Research, experimentation, parameter tuning, small-scale generation
 
-#### **🐍 generate_10k_images.py** - Production Scale Generation Script
+#### **generate_10k_images.py** - Production Scale Generation Script
 **Purpose**: Production-ready Python script for generating large-scale datasets (10,000+ images)
 
 **What it does**:
-- 🏭 **Batch Processing**: Efficiently generates thousands of images with memory management
-- 🔍 **Quality Filtering**: Automatically filters out low-quality images using multiple metrics
-- 📊 **Progress Monitoring**: Real-time statistics and progress tracking
-- 💾 **Robust Storage**: Organized file structure with metadata and error recovery
-- ⚡ **Performance Optimization**: GPU memory management and batch optimization
-- 📈 **Statistics Collection**: Comprehensive generation statistics and quality metrics
-- 🔄 **Resume Capability**: Can resume interrupted generation sessions
-- 📝 **Logging**: Detailed logs for debugging and monitoring
+- **Batch Processing**: Efficiently generates thousands of images with memory management
+- **Quality Filtering**: Automatically filters out low-quality images using multiple metrics
+- **Progress Monitoring**: Real-time statistics and progress tracking
+- **Robust Storage**: Organized file structure with metadata and error recovery
+- **Performance Optimization**: GPU memory management and batch optimization
+- **Statistics Collection**: Comprehensive generation statistics and quality metrics
+- **Resume Capability**: Can resume interrupted generation sessions
+- **Logging**: Detailed logs for debugging and monitoring
 
 **Key Features**:
 - Command-line interface with configurable parameters
@@ -347,16 +347,16 @@ python generate_10k_images.py --target-count 5000 --batch-size 2 --quality-thres
 **Output**: 10,000+ filtered high-quality images with comprehensive statistics
 **Best For**: Production datasets, large-scale generation, automated workflows
 
-#### **🐍 monitor_generation.py** - Real-time Monitoring Script
+#### **monitor_generation.py** - Real-time Monitoring Script
 **Purpose**: Real-time monitoring and visualization of large-scale generation progress
 
 **What it provides**:
-- 📊 **Live Dashboard**: Real-time generation statistics and progress visualization
-- 📈 **Performance Metrics**: Generation speed, quality scores, memory usage tracking
-- 🎯 **Quality Analysis**: Live quality distribution and filtering statistics
-- 💾 **Resource Monitoring**: GPU/CPU usage and memory consumption tracking
-- 📱 **Web Interface**: Browser-based monitoring dashboard
-- 🔔 **Alerts**: Notifications for completion or errors
+- **Live Dashboard**: Real-time generation statistics and progress visualization
+- **Performance Metrics**: Generation speed, quality scores, memory usage tracking
+- **Quality Analysis**: Live quality distribution and filtering statistics
+- **Resource Monitoring**: GPU/CPU usage and memory consumption tracking
+- **Web Interface**: Browser-based monitoring dashboard
+- **Alerts**: Notifications for completion or errors
 
 **Usage**:
 ```bash
@@ -366,15 +366,15 @@ python monitor_generation.py
 
 **Best For**: Monitoring long-running generation jobs, performance analysis
 
-#### **🐍 test_first_batch.py** - Quick Testing and Diagnostics
+#### **test_first_batch.py** - Quick Testing and Diagnostics
 **Purpose**: Quick testing script for diagnosing issues and validating setup
 
 **What it does**:
-- ⚡ **Fast Testing**: Generates 1-5 test images quickly
-- 🔍 **Diagnostic Analysis**: Identifies common issues (black images, memory problems)
-- 📊 **Quality Assessment**: Tests quality scoring and filtering
-- 🛠️ **Setup Validation**: Verifies dependencies and GPU setup
-- 📝 **Detailed Logging**: Comprehensive error reporting and debugging info
+- **Fast Testing**: Generates 1-5 test images quickly
+- **Diagnostic Analysis**: Identifies common issues (black images, memory problems)
+- **Quality Assessment**: Tests quality scoring and filtering
+- **Setup Validation**: Verifies dependencies and GPU setup
+- **Detailed Logging**: Comprehensive error reporting and debugging info
 
 **Usage**:
 ```bash
@@ -387,19 +387,19 @@ python test_first_batch.py --batch-size 3 --steps 20
 
 **Best For**: Troubleshooting, setup validation, quick quality checks
 
-### 🚗 **CARLA Testing Components**
+###**CARLA Testing Components**
 
-#### **🐍 carla_synthetic_data_test.py** - Main Testing Framework Script
+#### **carla_synthetic_data_test.py** - Main Testing Framework Script
 **Purpose**: Comprehensive autonomous driving performance testing using CARLA simulator
 
 **What it does**:
-- 🚗 **Automated Vehicle Control**: Simulates autonomous driving with different AI models
-- 📊 **Performance Comparison**: Tests models trained with vs without synthetic data
-- 🌦️ **Multiple Scenarios**: Rural roads, highways, various weather conditions (clear, cloudy, wet, sunset)
-- 📈 **Comprehensive Metrics**: Collisions, lane departures, steering smoothness, path efficiency
-- 📊 **Statistical Analysis**: Automated analysis with improvement percentages and significance testing
-- 📋 **Detailed Reports**: JSON results and visual comparison charts
-- 🎯 **CARLA 0.9.14 Compatible**: Optimized for CARLA 0.9.14 with fallback support
+- **Automated Vehicle Control**: Simulates autonomous driving with different AI models
+- **Performance Comparison**: Tests models trained with vs without synthetic data
+- **Multiple Scenarios**: Rural roads, highways, various weather conditions (clear, cloudy, wet, sunset)
+- **Comprehensive Metrics**: Collisions, lane departures, steering smoothness, path efficiency
+- **Statistical Analysis**: Automated analysis with improvement percentages and significance testing
+- **Detailed Reports**: JSON results and visual comparison charts
+- **CARLA 0.9.14 Compatible**: Optimized for CARLA 0.9.14 with fallback support
 
 **Key Features**:
 - Automated CARLA connection and vehicle spawning
@@ -422,15 +422,15 @@ python carla_synthetic_data_test.py --test-duration 600
 **Output**: Performance comparison reports, statistical analysis, improvement metrics
 **Best For**: Validating synthetic data effectiveness, autonomous driving research
 
-#### **🐍 carla_three_way_comparison.py** - Advanced Three-Way Testing Script
+#### **carla_three_way_comparison.py** - Advanced Three-Way Testing Script
 **Purpose**: Comprehensive three-way comparison: Baseline vs Synthetic vs Real BDD100K data
 
 **What it does**:
-- 🔄 **Three-Way Testing**: Compares baseline, synthetic, and real BDD100K trained models
-- 📊 **Advanced Analytics**: Statistical significance testing and detailed comparisons
-- 🎯 **Balanced Comparison**: Uses equal dataset sizes (10K images each) for fair comparison
-- 📈 **Comprehensive Metrics**: Extended performance analysis across all three approaches
-- 🌍 **Real-World Validation**: Tests effectiveness of synthetic vs real-world data
+- **Three-Way Testing**: Compares baseline, synthetic, and real BDD100K trained models
+- **Advanced Analytics**: Statistical significance testing and detailed comparisons
+- **Balanced Comparison**: Uses equal dataset sizes (10K images each) for fair comparison
+- **Comprehensive Metrics**: Extended performance analysis across all three approaches
+- **Real-World Validation**: Tests effectiveness of synthetic vs real-world data
 
 **Usage**:
 ```bash
@@ -442,16 +442,16 @@ python carla_three_way_comparison.py
 **Output**: Detailed three-way performance analysis with statistical significance
 **Best For**: Research validation, comparing synthetic vs real data effectiveness
 
-#### **🐍 setup_carla_test.py** - Environment Setup Script
+#### **setup_carla_test.py** - Environment Setup Script
 **Purpose**: Automated setup and configuration for CARLA testing environment
 
 **What it does**:
-- 🔍 **Environment Detection**: Checks CARLA installation and Python dependencies
-- 📦 **Dependency Installation**: Installs required packages for CARLA testing with fallbacks
-- 📁 **Directory Setup**: Creates necessary folders for results and models
-- 🔗 **Connection Testing**: Verifies CARLA server connectivity
-- 📝 **Configuration Creation**: Sets up default testing configurations
-- 🛠️ **CARLA API Installation**: Robust CARLA Python API installation with multiple methods
+- **Environment Detection**: Checks CARLA installation and Python dependencies
+- **Dependency Installation**: Installs required packages for CARLA testing with fallbacks
+- **Directory Setup**: Creates necessary folders for results and models
+- **Connection Testing**: Verifies CARLA server connectivity
+- **Configuration Creation**: Sets up default testing configurations
+- **CARLA API Installation**: Robust CARLA Python API installation with multiple methods
 
 **Usage**:
 ```bash
@@ -461,15 +461,15 @@ python setup_carla_test.py
 
 **Best For**: Initial setup, environment validation, dependency management
 
-#### **🐍 setup_three_way_comparison.py** - Advanced Setup Script
+#### **setup_three_way_comparison.py** - Advanced Setup Script
 **Purpose**: Complete setup for three-way comparison including BDD100K data
 
 **What it does**:
-- 📦 **Complete Environment Setup**: All dependencies for three-way testing
-- 📊 **Data Validation**: Checks availability of synthetic and BDD100K data
-- 🤖 **Model Management**: Validates trained models for all three approaches
-- 📝 **Workflow Scripts**: Creates automated workflow scripts
-- 📋 **Configuration Management**: Sets up comprehensive testing configurations
+- **Complete Environment Setup**: All dependencies for three-way testing
+- **Data Validation**: Checks availability of synthetic and BDD100K data
+- **Model Management**: Validates trained models for all three approaches
+- **Workflow Scripts**: Creates automated workflow scripts
+- **Configuration Management**: Sets up comprehensive testing configurations
 
 **Usage**:
 ```bash
@@ -479,18 +479,18 @@ python setup_three_way_comparison.py
 
 **Best For**: Advanced research setups, three-way comparison preparation
 
-### 🤖 **Model Training Components**
+### **Model Training Components**
 
-#### **🐍 train_with_synthetic_data.py** - Basic Model Training Script
+#### **train_with_synthetic_data.py** - Basic Model Training Script
 **Purpose**: Demonstrates how to train autonomous driving models using synthetic data
 
 **What it provides**:
-- 🧠 **Model Architecture**: Example CNN for rural driving control prediction
-- 📚 **Dataset Integration**: Shows how to use your 10K synthetic images for training
-- 🔄 **Comparison Training**: Trains both baseline and synthetic-enhanced models
-- 📊 **Training Metrics**: Loss tracking and model evaluation
-- 💾 **Model Export**: Saves trained models for CARLA testing
-- 🏷️ **Label Generation**: Automatic driving label generation from image analysis
+- **Model Architecture**: Example CNN for rural driving control prediction
+- **Dataset Integration**: Shows how to use your 10K synthetic images for training
+- **Comparison Training**: Trains both baseline and synthetic-enhanced models
+- **Training Metrics**: Loss tracking and model evaluation
+- **Model Export**: Saves trained models for CARLA testing
+- **Label Generation**: Automatic driving label generation from image analysis
 
 **Key Features**:
 - Synthetic label generation for driving control (steering, throttle, brake)
@@ -506,15 +506,15 @@ python train_with_synthetic_data.py
 
 **Best For**: Learning model training, basic autonomous driving research
 
-#### **🐍 train_three_way_models.py** - Advanced Three-Way Training Script
+#### **train_three_way_models.py** - Advanced Three-Way Training Script
 **Purpose**: Trains three models for comprehensive comparison: baseline, synthetic, and BDD100K
 
 **What it does**:
-- 🔄 **Three-Way Training**: Trains baseline, synthetic, and BDD100K models
-- 📊 **Balanced Datasets**: Uses equal-sized datasets for fair comparison
-- 🏷️ **Smart Label Generation**: Context-aware label generation based on image metadata
-- 📈 **Training Analytics**: Comprehensive training metrics and comparisons
-- 💾 **Model Management**: Organized model saving and evaluation
+- **Three-Way Training**: Trains baseline, synthetic, and BDD100K models
+- **Balanced Datasets**: Uses equal-sized datasets for fair comparison
+- **Smart Label Generation**: Context-aware label generation based on image metadata
+- **Training Analytics**: Comprehensive training metrics and comparisons
+- **Model Management**: Organized model saving and evaluation
 
 **Usage**:
 ```bash
@@ -524,15 +524,15 @@ python train_three_way_models.py
 
 **Best For**: Research comparisons, validating synthetic vs real data effectiveness
 
-#### **🐍 download_bdd100k_rural.py** - BDD100K Dataset Extraction Script
+#### **download_bdd100k_rural.py** - BDD100K Dataset Extraction Script
 **Purpose**: Downloads and filters BDD100K dataset for rural driving scenarios
 
 **What it does**:
-- 📥 **Dataset Download**: Guides through BDD100K dataset acquisition
-- 🔍 **Rural Filtering**: Extracts rural driving scenarios (highway, country roads, etc.)
-- ⚖️ **Balanced Selection**: Creates balanced subset matching synthetic data scale
-- 📊 **Metadata Processing**: Processes BDD100K labels and attributes
-- 💾 **Organized Storage**: Creates organized dataset structure with metadata
+- **Dataset Download**: Guides through BDD100K dataset acquisition
+- **Rural Filtering**: Extracts rural driving scenarios (highway, country roads, etc.)
+- **Balanced Selection**: Creates balanced subset matching synthetic data scale
+- **Metadata Processing**: Processes BDD100K labels and attributes
+- **Organized Storage**: Creates organized dataset structure with metadata
 
 **Usage**:
 ```bash
@@ -542,19 +542,19 @@ python download_bdd100k_rural.py --count 10000
 
 **Best For**: Creating real-world comparison datasets, research validation
 
-### 🔧 **Integration & Utility Components**
+### **Integration & Utility Components**
 
-#### **📓 carla_integration.ipynb** - Interactive CARLA Integration Notebook
+#### **carla_integration.ipynb** - Interactive CARLA Integration Notebook
 **Purpose**: Interactive Jupyter notebook for CARLA-SDXL integration and comparison
 
 **What it does**:
-- 🔌 **CARLA Connection**: Establishes connection to running CARLA simulator instance
-- 📸 **Real-time Capture**: Captures images from CARLA's camera sensors in rural environments
-- 🔄 **Direct Comparison**: Side-by-side comparison of SDXL vs CARLA image quality
-- 📊 **Quantitative Analysis**: Calculates similarity metrics between synthetic approaches
-- 🎯 **Domain Adaptation**: Techniques to make SDXL images more CARLA-compatible
-- 📈 **Training Data Augmentation**: Creates mixed datasets combining both approaches
-- 🔬 **Interactive Analysis**: Step-by-step exploration with real-time feedback
+- **CARLA Connection**: Establishes connection to running CARLA simulator instance
+- **Real-time Capture**: Captures images from CARLA's camera sensors in rural environments
+- **Direct Comparison**: Side-by-side comparison of SDXL vs CARLA image quality
+- **Quantitative Analysis**: Calculates similarity metrics between synthetic approaches
+- **Domain Adaptation**: Techniques to make SDXL images more CARLA-compatible
+- **Training Data Augmentation**: Creates mixed datasets combining both approaches
+- **Interactive Analysis**: Step-by-step exploration with real-time feedback
 
 **Key Features**:
 - Interactive parameter tuning for CARLA scenarios
@@ -571,15 +571,15 @@ python download_bdd100k_rural.py --count 10000
 **Output**: Comparative analysis reports and mixed training datasets
 **Best For**: Research, domain adaptation studies, interactive CARLA exploration
 
-#### **🐍 install_carla_api.py** - CARLA Installation Script
+#### **install_carla_api.py** - CARLA Installation Script
 **Purpose**: Robust CARLA Python API installation with multiple fallback methods
 
 **What it does**:
-- 🔍 **Multi-Method Installation**: Tries pip, local detection, and direct download
-- 🌐 **Cross-Platform Support**: Works on Windows, Linux, and macOS
-- 📦 **Version Management**: Handles multiple CARLA versions (0.9.13, 0.9.14, 0.9.15)
-- 🔧 **Automatic Detection**: Finds existing CARLA installations
-- ✅ **Installation Verification**: Tests CARLA import after installation
+- **Multi-Method Installation**: Tries pip, local detection, and direct download
+- **Cross-Platform Support**: Works on Windows, Linux, and macOS
+- **Version Management**: Handles multiple CARLA versions (0.9.13, 0.9.14, 0.9.15)
+- **Automatic Detection**: Finds existing CARLA installations
+- **Installation Verification**: Tests CARLA import after installation
 
 **Usage**:
 ```bash
@@ -589,15 +589,15 @@ python install_carla_api.py
 
 **Best For**: Resolving CARLA installation issues, automated setup
 
-#### **🐍 check_carla_compatibility.py** - CARLA Compatibility Checker
+#### **check_carla_compatibility.py** - CARLA Compatibility Checker
 **Purpose**: Validates CARLA 0.9.14 compatibility and system requirements
 
 **What it does**:
-- ✅ **Version Checking**: Verifies CARLA server and client versions
-- 🗺️ **Map Validation**: Checks availability of required maps
-- 🚗 **Blueprint Testing**: Validates vehicle and sensor blueprints
-- 🔗 **Connection Testing**: Tests CARLA server connectivity
-- 📊 **System Analysis**: Reports system compatibility and recommendations
+- **Version Checking**: Verifies CARLA server and client versions
+- **Map Validation**: Checks availability of required maps
+- **Blueprint Testing**: Validates vehicle and sensor blueprints
+- **Connection Testing**: Tests CARLA server connectivity
+- **System Analysis**: Reports system compatibility and recommendations
 
 **Usage**:
 ```bash
@@ -607,16 +607,16 @@ python check_carla_compatibility.py
 
 **Best For**: Troubleshooting CARLA issues, system validation
 
-#### **🐍 fix_diffusers_dependencies.py** - Dependency Management Script
+#### **fix_diffusers_dependencies.py** - Dependency Management Script
 **Purpose**: Automatically resolves common dependency conflicts in GPU environments
 
 **What it does**:
-- 🔍 **Version Detection**: Checks current package versions and identifies conflicts
-- 🗑️ **Clean Uninstall**: Removes conflicting transformers/diffusers versions
-- 📦 **Compatible Installation**: Installs tested compatible versions of all packages
-- ✅ **Import Verification**: Tests all critical imports to ensure functionality
-- 🌐 **Environment Detection**: Handles Colab, Kaggle, and local environment specifics
-- 🔧 **Automatic Resolution**: Resolves common import errors automatically
+- **Version Detection**: Checks current package versions and identifies conflicts
+- **Clean Uninstall**: Removes conflicting transformers/diffusers versions
+- **Compatible Installation**: Installs tested compatible versions of all packages
+- **Import Verification**: Tests all critical imports to ensure functionality
+- **Environment Detection**: Handles Colab, Kaggle, and local environment specifics
+- **Automatic Resolution**: Resolves common import errors automatically
 
 **Key Packages Managed**:
 - `transformers`, `diffusers`, `accelerate`, `safetensors`
@@ -631,14 +631,14 @@ python fix_diffusers_dependencies.py
 
 **Best For**: Resolving import errors, environment setup, dependency conflicts
 
-#### **🐍 fix_numpy_opencv.py** - NumPy Compatibility Fix Script
+#### **fix_numpy_opencv.py** - NumPy Compatibility Fix Script
 **Purpose**: Resolves NumPy 2.0 compatibility issues with OpenCV
 
 **What it does**:
-- 🔧 **NumPy Version Management**: Downgrades NumPy to compatible version
-- 📦 **OpenCV Compatibility**: Ensures OpenCV works with NumPy version
-- ✅ **Compatibility Testing**: Verifies imports work after fix
-- 🔄 **Automatic Resolution**: Handles the fix process automatically
+- **NumPy Version Management**: Downgrades NumPy to compatible version
+- **OpenCV Compatibility**: Ensures OpenCV works with NumPy version
+- **Compatibility Testing**: Verifies imports work after fix
+- **Automatic Resolution**: Handles the fix process automatically
 
 **Usage**:
 ```bash
@@ -650,7 +650,7 @@ python fix_numpy_opencv.py
 
 ---
 
-## 📊 **Configuration Files**
+## **Configuration Files**
 
 ### **config_10k.json** - Production Generation Configuration
 **Purpose**: Configuration file for large-scale image generation
@@ -679,7 +679,7 @@ python fix_numpy_opencv.py
 - GPU-optimized package selections
 - Compatibility-tested dependency combinations
 
-## 🎨 Customization
+## Customization
 
 ### **Main Notebook Customization**
 
@@ -765,7 +765,7 @@ ADAPTATION_SETTINGS = {
 }
 ```
 
-## 🔬 Research Applications
+## Research Applications
 
 ### **Data Generation Research**
 - **Autonomous Vehicle Training**: Generate diverse rural road scenarios for ML training at scale
@@ -799,7 +799,7 @@ ADAPTATION_SETTINGS = {
 - **Regulatory Compliance**: Provide comprehensive testing datasets for safety certification
 - **Edge Case Generation**: Create rare driving scenarios that are difficult to capture in real data
 
-## 📊 Quality Metrics
+## Quality Metrics
 
 The notebook provides comprehensive quality analysis:
 
@@ -815,7 +815,7 @@ The notebook provides comprehensive quality analysis:
 - **Color Harmony**: Realistic color palettes
 - **Compositional Quality**: Professional photography standards
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Areas for improvement:
 
@@ -837,11 +837,11 @@ Contributions are welcome! Areas for improvement:
 3. **Interactive Dashboards**: Enhanced monitoring and visualization tools
 4. **Automated Pipelines**: CI/CD integration for continuous testing and validation
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See LICENSE file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Stability AI**: For the Stable Diffusion XL model
 - **Hugging Face**: For the Diffusers library and model hosting
@@ -849,7 +849,7 @@ This project is licensed under the MIT License. See LICENSE file for details.
 - **Research Community**: For KITTI, Cityscapes, and BDD100K datasets used in comparison
 - **PyTorch Team**: For the deep learning framework enabling both generation and testing
 
-## 📞 Support
+## Support
 
 For issues and questions:
 
@@ -858,7 +858,7 @@ For issues and questions:
 3. **GitHub Issues**: Report bugs and feature requests
 4. **Documentation**: Comprehensive inline documentation in notebook
 
-## 🔄 Version History
+## Version History
 
 - **v1.0**: Initial release with basic SDXL generation
 - **v1.1**: Added dependency auto-fix and error handling
@@ -871,7 +871,7 @@ For issues and questions:
 
 ---
 
-## 🎯 Getting Started
+## Getting Started
 
 ### For Data Generation:
 1. **Quick Start**: Use `sdxl_rural_driving_gen.ipynb` for interactive generation and testing
@@ -902,4 +902,4 @@ python train_with_synthetic_data.py
 python carla_synthetic_data_test.py
 ```
 
-**🚀 Ready to generate high-quality synthetic rural driving data and validate its effectiveness? Start with the generation pipeline and test the results in CARLA simulation!**
+**Ready to generate high-quality synthetic rural driving data and validate its effectiveness? Start with the generation pipeline and test the results in CARLA simulation!**
