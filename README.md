@@ -247,7 +247,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 torch.cuda.set_per_process_memory_fraction(0.9)
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 sdxl-rural-driving-generator/
@@ -719,7 +719,7 @@ enhanced_image = enhance_realism_post_processing(generated_image)
 selected_images = intelligent_image_selection(all_images, target_count=50)
 ```
 
-## 📈 Advanced Usage
+## Advanced Usage
 
 ### **Main Notebook Advanced Features**
 
@@ -902,4 +902,4 @@ python train_with_synthetic_data.py
 python carla_synthetic_data_test.py
 ```
 
-**Ready to generate high-quality synthetic rural driving data and validate its effectiveness? Start with the generation pipeline and test the results in CARLA simulation!**
+**Generate high-quality synthetic rural driving data, then evaluate its performance by running the generation pipeline and validating the outputs in CARLA simulation.**
