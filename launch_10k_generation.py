@@ -17,48 +17,48 @@ import torch
 def check_system_requirements():
     """Check if system meets requirements for 10K generation"""
     
-    print("🔍 SYSTEM REQUIREMENTS CHECK")
+    print(" SYSTEM REQUIREMENTS CHECK")
     print("=" * 40)
     
     requirements_met = True
     
     # Check GPU
     if not torch.cuda.is_available():
-        print("❌ CUDA not available - GPU required")
+        print(" CUDA not available - GPU required")
         requirements_met = False
     else:
         gpu_name = torch.cuda.get_device_name(0)
         gpu_memory = torch.cuda.get_device_properties(0).total_memory / 1024**3
-        print(f"✅ GPU: {gpu_name} ({gpu_memory:.1f}GB)")
+        print(f" GPU: {gpu_name} ({gpu_memory:.1f}GB)")
         
         if gpu_memory < 12:
-            print("⚠️ Warning: Less than 12GB VRAM may cause issues")
+            print(" Warning: Less than 12GB VRAM may cause issues")
     
     # Check RAM
     ram_gb = psutil.virtual_memory().total / 1024**3
-    print(f"✅ RAM: {ram_gb:.1f}GB")
+    print(f" RAM: {ram_gb:.1f}GB")
     
     if ram_gb < 16:
-        print("⚠️ Warning: Less than 16GB RAM may cause issues")
+        print(" Warning: Less than 16GB RAM may cause issues")
     
     # Check disk space
     disk_usage = psutil.disk_usage('.')
     free_space_gb = disk_usage.free / 1024**3
-    print(f"✅ Free disk space: {free_space_gb:.1f}GB")
+    print(f" Free disk space: {free_space_gb:.1f}GB")
     
     if free_space_gb < 50:
-        print("⚠️ Warning: Less than 50GB free space may not be enough")
+        print(" Warning: Less than 50GB free space may not be enough")
     
     return requirements_met
 
 def estimate_generation_time():
     """Estimate generation time based on hardware"""
     
-    print("\n⏱️ GENERATION TIME ESTIMATES")
+    print("\n GENERATION TIME ESTIMATES")
     print("=" * 40)
     
     if not torch.cuda.is_available():
-        print("❌ Cannot estimate - no GPU detected")
+        print(" Cannot estimate - no GPU detected")
         return
     
     gpu_name = torch.cuda.get_device_name(0).lower()
@@ -91,10 +91,10 @@ def estimate_generation_time():
     target_images = 10000
     hours = target_images / speed
     
-    print(f"🎯 Target: {target_images:,} images")
-    print(f"🚀 Estimated speed: {speed:,} images/hour")
-    print(f"⏰ Estimated time: {hours:.1f} hours ({hours/24:.1f} days)")
-    print(f"💾 Storage needed: ~{target_images * 3 / 1000:.0f}GB")
+    print(f" Target: {target_images:,} images")
+    print(f" Estimated speed: {speed:,} images/hour")
+    print(f" Estimated time: {hours:.1f} hours ({hours/24:.1f} days)")
+    print(f" Storage needed: ~{target_images * 3 / 1000:.0f}GB")
     
     return hours
 
@@ -104,10 +104,10 @@ def load_config(config_path="config_10k.json"):
         with open(config_path, 'r') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"❌ Config file not found: {config_path}")
+        print(f" Config file not found: {config_path}")
         return None
     except json.JSONDecodeError:
-        print(f"❌ Invalid JSON in config file: {config_path}")
+        print(f" Invalid JSON in config file: {config_path}")
         return None
 
 def run_generation(chunk_id=None, config_path="config_10k.json"):
@@ -117,7 +117,7 @@ def run_generation(chunk_id=None, config_path="config_10k.json"):
     if not config:
         return False
     
-    print(f"\n🚀 STARTING 10K IMAGE GENERATION")
+    print(f"\n STARTING 10K IMAGE GENERATION")
     print("=" * 40)
     
     # Build command
@@ -148,18 +148,18 @@ def run_generation(chunk_id=None, config_path="config_10k.json"):
         process.wait()
         
         if process.returncode == 0:
-            print(f"\n✅ Generation completed successfully!")
+            print(f"\n Generation completed successfully!")
             return True
         else:
-            print(f"\n❌ Generation failed with return code: {process.returncode}")
+            print(f"\n Generation failed with return code: {process.returncode}")
             return False
             
     except KeyboardInterrupt:
-        print(f"\n⚠️ Generation interrupted by user")
+        print(f"\n Generation interrupted by user")
         process.terminate()
         return False
     except Exception as e:
-        print(f"\n❌ Error running generation: {e}")
+        print(f"\n Error running generation: {e}")
         return False
 
 def main():
@@ -175,12 +175,12 @@ def main():
     
     args = parser.parse_args()
     
-    print("🎨 10K Rural Driving Image Generator")
+    print(" 10K Rural Driving Image Generator")
     print("=" * 50)
     
     # Check system requirements
     if not check_system_requirements():
-        print("\n⚠️ System requirements not met - performance may be severely limited!")
+        print("\n System requirements not met - performance may be severely limited!")
         print("Generation will proceed but may be extremely slow without CUDA GPU.")
         
         response = input("\nProceed anyway? (y/N): ").strip().lower()
@@ -189,19 +189,19 @@ def main():
             return 0
     
     if args.check_only:
-        print("\n✅ System check complete!")
+        print("\n System check complete!")
         return 0
     
     # Show time estimates
     estimate_generation_time()
     
     if args.estimate_only:
-        print("\n✅ Time estimation complete!")
+        print("\n Time estimation complete!")
         return 0
     
     # Confirm before starting
     if not args.chunk_id:
-        print(f"\n⚠️ About to generate 10,000 images")
+        print(f"\n About to generate 10,000 images")
         print("This will take several hours and use significant resources.")
         
         response = input("\nProceed? (y/N): ").strip().lower()
@@ -213,10 +213,10 @@ def main():
     success = run_generation(args.chunk_id, args.config)
     
     if success:
-        print(f"\n🎉 10K image generation completed!")
+        print(f"\n 10K image generation completed!")
         return 0
     else:
-        print(f"\n💥 Generation failed!")
+        print(f"\n Generation failed!")
         return 1
 
 if __name__ == "__main__":
